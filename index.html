@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/api_challenge_1/assets/pokemon-pikachu-logo.png">
+    <title>Pokemon API</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Poke Search</h1>
+
+        <div class="wrapper">
+            <form>
+                <p>
+                    <label for="search">Enter a Pokemon number or name (required):</label>
+                    <input type="text" name="search" id="search" placeholder="Search by Pokemon # or name" required>
+                </p>
+                <p>
+                    <button class="submit" id="submit">Catch 'Em All</button>
+                </p>
+            </form>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2 id="name"></h2>
+                        <h3 id="id-number"></h3>
+                        <img src="" id="poke-photo">
+                    </div>
+                    <div class="card-back">
+                        <p id="experience"></p>
+                        <p id="height"></p>
+                        <p id="weight"></p>
+                        <p id="abilities"></p>
+                        <p id="types"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
