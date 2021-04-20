@@ -8,7 +8,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(/api_challenge_1/assets/api-background.png);
+    background-image: url(./api_challenge_1/assets/api-background.png);
     background-size: cover;
     height: 100%;
 }
@@ -36,7 +36,7 @@ input:focus {
     outline: none;
 }
 button {
-    background-image: url(/api_challenge_1/assets/pokeball_classic.png);
+    background-image: url(./api_challenge_1/assets/pokeball_classic.png);
     background-size: cover;
     background-color: transparent;
     width: 80px;
@@ -82,14 +82,14 @@ button:hover {
     backface-visibility: hidden;
 }
 .card-front {
-    background-image: url(/api_challenge_1/assets/blue-id-card.png);
+    background-image: url(./api_challenge_1/assets/blue-id-card.png);
     background-size: cover;
     background-position-y: center;
     color: whitesmoke;
     border-radius: 1em;
 }
 .card-back {
-    background-image: url(/api_challenge_1/assets/purple-id-card.png);
+    background-image: url(./api_challenge_1/assets/purple-id-card.png);
     background-size: cover;
     background-position-y: center;
     color: whitesmoke;
