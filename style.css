@@ -2,35 +2,66 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
 }
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(/api_challenge_1/assets/api-background.png);
+    background-size: cover;
+    height: 100%;
+}
+
+.title {
+    padding-top: 20px;
+    width: 50%;
 }
 
 /* Search Area */
 form {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75em;
+}
+input {
+    font-family: 'Press Start 2P', cursive;
+    height: 25px;
+    width: 150px;
+    border-radius: 0.5rem;
+}
+input:focus {
+    outline: none;
 }
 button {
     background-image: url(/api_challenge_1/assets/pokeball_classic.png);
     background-size: cover;
     background-color: transparent;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border: none;
     cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75em;
+    text-align: center;
+    margin: 0;
+}
+button:hover {
+    font-size: 1.2em;
 }
 
 /* Flipping Card */
 .card {
     background-color: transparent;
-    width: 475px;
+    width: 550px;
     height: 300px;
+    justify-content: center;
     border: solid 2px #f1f1f1;
     border-radius: 1em;
     perspective: 1000px;
+    font-family: 'Press Start 2P', cursive;
 }
 .card-inner {
     position: relative;
@@ -51,15 +82,50 @@ button {
     backface-visibility: hidden;
 }
 .card-front {
-    background-color: #bbb;
-    color: black;
+    background-image: url(/api_challenge_1/assets/blue-id-card.png);
+    background-size: cover;
+    background-position-y: center;
+    color: whitesmoke;
     border-radius: 1em;
 }
 .card-back {
-    background-color: black;
-    color: white;
+    background-image: url(/api_challenge_1/assets/purple-id-card.png);
+    background-size: cover;
+    background-position-y: center;
+    color: whitesmoke;
     border-radius: 1em;
     transform: rotateY(180deg);
 }
 
 /* Card Content */
+#name {
+    text-transform: capitalize;
+}
+#poke-photo-front {
+    width: 40%;
+    position: relative;
+    bottom: 30px;
+}
+#poke-photo-back {
+    width: 60%;
+    position: absolute;
+    top: -20px;
+    left: 110px;
+    z-index: -1;
+    opacity: 40%;
+}
+#experience {
+    padding-top: 10px;
+}
+#height {
+    padding-top: 5px;
+}
+#weight {
+    padding-top: 5px;
+}
+#abilities {
+    padding-top: 5px;
+}
+#types {
+    padding-top: 5px;
+}

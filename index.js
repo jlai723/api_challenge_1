@@ -10,14 +10,6 @@ const section = document.querySelector('.card');
 // EVENT LISTENER FOR SEARCH
 searchBtn.addEventListener('click', getPokemon);
 
-// searchBar.addEventListener('input', (event) => {
-//    const searchValue = event.target.value;
-//    getPokemon(searchValue);
-// })
-
-// let userInput = "289" // Here we should get the number to look up by the user input of a form?
-// getPokemon(userInput);
-
 function getPokemon(e) {
     e.preventDefault();
     const userInput = document.querySelector('#search').value.toLowerCase();
@@ -38,6 +30,9 @@ function getPokemon(e) {
             }
             displayPokemon(pokeObj);
         })
+        .catch(err => {
+            displayError(err);
+        });
 }
 
 function displayPokemon(pokeObj) {
@@ -50,8 +45,11 @@ function displayPokemon(pokeObj) {
     let pokeExp = document.getElementById('experience');
     pokeExp.innerHTML = `Base Experience Level: ${pokeObj.experience}`;
 
-    let pokePhoto = document.getElementById('poke-photo');
-    pokePhoto.src = pokeObj.icon;
+    let pokePhotoFront = document.getElementById('poke-photo-front');
+    pokePhotoFront.src = pokeObj.icon;
+
+    let pokePhotoBack = document.getElementById('poke-photo-back');
+    pokePhotoBack.src = pokeObj.icon;
 
     let pokeHeight = document.getElementById('height');
     pokeHeight.innerHTML = `Height (in decimeters): ${pokeObj.height}`;
@@ -60,8 +58,37 @@ function displayPokemon(pokeObj) {
     pokeWeight.innerHTML = `Weight (in hectograms): ${pokeObj.weight}`;
 
     let pokeAbilities = document.getElementById('abilities');
-    pokeAbilities.innerHTML = `Starting Move(s): <br> ${pokeObj.startingMoves}`;
+    pokeAbilities.innerHTML = `Starting Move(s): <br> ${pokeObj.startingMoves.replaceAll("-", " ")}`;
 
     let pokeTypes = document.getElementById('types');
     pokeTypes.innerHTML = `Type(s): <br> ${pokeObj.types}`;
+}
+
+function displayError() {
+    let errorMsg = document.getElementById('name');
+    errorMsg.innerHTML = '';
+
+    let pokeId = document.getElementById('id-number');
+    pokeId.innerHTML = 'No Pokemon found :(';
+
+    let pokeExp = document.getElementById('experience');
+    pokeExp.innerHTML = 'No Pokemon found :(';
+
+    let pokePhotoFront = document.getElementById('poke-photo-front');
+    pokePhotoFront.src = '';
+
+    let pokePhotoBack = document.getElementById('poke-photo-back');
+    pokePhotoBack.src = '';
+
+    let pokeHeight = document.getElementById('height');
+    pokeHeight.innerHTML = '';
+
+    let pokeWeight = document.getElementById('weight');
+    pokeWeight.innerHTML = '';
+
+    let pokeAbilities = document.getElementById('abilities');
+    pokeAbilities.innerHTML = '';
+
+    let pokeTypes = document.getElementById('types');
+    pokeTypes.innerHTML = '';
 }

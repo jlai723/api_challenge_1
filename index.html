@@ -6,32 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="icon" href="/api_challenge_1/assets/pokemon-pikachu-logo.png">
     <title>Pokemon API</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>Poke Search</h1>
-
+        <img class="title" src="https://fontmeme.com/permalink/210420/ecf004a9011447894d4818e9823c6350.png" alt="Pokemon Database">
         <div class="wrapper">
             <form>
                 <p>
-                    <label for="search">Enter a Pokemon number or name (required):</label>
-                    <input type="text" name="search" id="search" placeholder="Search by Pokemon # or name" required>
+                    <label for="search">Enter a Pokemon number or name:</label>
+                    <input type="text" name="search" id="search" required>
                 </p>
                 <p>
-                    <button class="submit" id="submit">Catch 'Em All</button>
+                    <button class="submit" id="submit">Click to Catch</button>
                 </p>
             </form>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
                         <h2 id="name"></h2>
-                        <h3 id="id-number"></h3>
-                        <img src="" id="poke-photo">
+                        <p id="id-number"></p>
+                        <img src="" id="poke-photo-front">
                     </div>
                     <div class="card-back">
+                        <img src="" id="poke-photo-back">
                         <p id="experience"></p>
                         <p id="height"></p>
                         <p id="weight"></p>
